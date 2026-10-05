@@ -1,63 +1,166 @@
-# İzmir & Bartın Şehir Rehberi ve Yapay Zeka Chatbot Portalı
+# İzmir & Bartın Rehberi
 
-Bu proje, Ege'nin incisi **İzmir** ile Batı Karadeniz'in gözbebeği **Bartın** (Amasra dahil) şehirlerini tanıtan, tarihi, doğal güzellikleri ve kültürleri hakkında zengin bilgiler sunan premium tasarımlı bir web portalıdır.
+İzmir ve Bartın şehirlerini keşfetmek isteyen kullanıcılar için geliştirilmiş, yapay zeka destekli interaktif şehir ve turizm rehberi.
 
-Portala entegre edilmiş **RotaYapayZeka** asistanı, kullanıcının Bartın ve İzmir hakkında sorduğu soruları cevaplandırır. Arka planda Node.js/Express tabanlı sunucu, eğer `.env` dosyasında geçerli bir OpenAI API anahtarı varsa gerçek OpenAI API'si ile haberleşir. API anahtarı girilmemişse, **Yapay Zeka Simülatörü** devreye girerek kullanıcının sorduğu soruları zeki bir şekilde tahlil eder ve gerçekçi bir gecikmeyle (1.5 saniye düşünme süresi) harf harf ekrana yazarak (streaming) yanıt üretir.
+Bu proje; şehirlerin tarihi, doğal güzellikleri, kültürel özellikleri ve gezilecek yerleri hakkında bilgi sunarken, kullanıcıların sorularına yapay zeka destekli bir sohbet asistanı üzerinden yanıt vermeyi amaçlar.
 
-## Özellikler
+## Projenin Amacı
 
-1. **Premium & Glassmorphic Tasarım**:
-   - İzmir için **Ege Esintisi** teması (Mavi ve Gün Batımı Sarısı).
-   - Bartın için **Karadeniz Ormanı** teması (Zümrüt Yeşili ve Bakır/Gümüş).
-   - Şehir değiştirildiğinde arka plan renkleri, kart gölgeleri ve ikonlar yumuşak geçiş efektleriyle değişir.
-2. **Yapay Zeka Sohbet Asistanı**:
-   - Sabit ve yüzen butonlarla açılabilen modern sohbet arayüzü.
-   - Hızlı soru sorma butonları ("Bartın'ın tarihi yerleri", "Amasra Salatası nedir?" vb.).
-   - Harf harf akan (streaming) yazma efekti.
-   - Gerçek OpenAI API veya yerel yapay zeka simülatörü arasında dinamik geçiş.
-3. **Responsive Düzen**:
-   - Masaüstü, tablet ve mobil cihazlar için optimize edilmiş tamamen duyarlı tasarım.
-   - Mobil görünümde tek parmakla kontrol edilebilen tam ekran sohbet deneyimi.
+Projenin amacı, kullanıcıların İzmir ve Bartın hakkında ihtiyaç duydukları bilgilere modern ve kullanıcı dostu bir web arayüzü üzerinden ulaşmasını sağlamaktır.
+
+Platform içerisinde şehir rehberinin yanı sıra yapay zeka destekli bir sohbet sistemi de bulunmaktadır.
+
+## Temel Özellikler
+
+- İzmir şehir rehberi
+- Bartın şehir rehberi
+- Tarihi ve kültürel bilgiler
+- Doğal güzellikler ve gezilecek yerler
+- Şehirler hakkında bilgilendirici içerikler
+- Yapay zeka destekli sohbet asistanı
+- Kullanıcı sorularına dinamik yanıt sistemi
+- Responsive web tasarımı
+- Express.js tabanlı backend
+- OpenAI API entegrasyonu
+- OpenAI API anahtarı bulunmadığında yerel simülasyon modu
+
+## Yapay Zeka Asistanı
+
+Projenin önemli özelliklerinden biri yapay zeka destekli şehir rehberi asistanıdır.
+
+Kullanıcılar İzmir ve Bartın hakkında sorular sorarak şehirler, gezilecek yerler, kültür ve turizm konularında bilgi alabilir.
+
+Backend tarafında Express.js kullanılarak oluşturulan `/api/chat` endpoint'i üzerinden yapay zeka servisiyle iletişim kurulmaktadır.
+
+OpenAI API anahtarı tanımlanmadığında uygulama yerel simülasyon modunda çalışabilecek şekilde tasarlanmıştır.
+
+## Kullanılan Teknolojiler
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome
+- Google Fonts
+
+### Backend
+
+- Node.js
+- Express.js
+- CORS
+- dotenv
+- OpenAI API
+
+## Proje Yapısı
+
+```text
+izmir-bartin-rehberi/
+│
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+│
+├── server.js
+├── package.json
+├── package-lock.json
+├── README.md
+└── .gitignore
+```
 
 ## Gereksinimler
+Projeyi çalıştırmak için bilgisayarınızda aşağıdaki yazılımların bulunması gerekir:
+- Node.js
+- npm
+Node.js'in güncel LTS sürümünün kullanılması önerilir.
 
-- Node.js (v16 veya üzeri tavsiye edilir)
-- npm (Node Package Manager)
+## Kurulum
 
-## Kurulum ve Çalıştırma
+### 1. Projeyi klonlayın
+```bash
+git clone https://github.com/MelikeSudeTekin/izmir-bartin-rehberi.git
+```
 
-1. Proje dizininde terminali açın:
-   ```bash
-   cd C:\Users\Mesu\.gemini\antigravity-ide\scratch\izmir-bartin-rehberi
-   ```
+### 2. Proje klasörüne girin
+```bash
+cd izmir-bartin-rehberi
+```
 
-2. Bağımlılıkları yükleyin (Eğer henüz yüklenmediyse):
-   ```bash
-   npm install
-   ```
+### 3. Bağımlılıkları yükleyin
+```bash
+npm install
+```
 
-3. (İsteğe bağlı) Gerçek OpenAI API'sini kullanmak için `.env` dosyasını düzenleyin:
-   - `.env` dosyasını açıp `OPENAI_API_KEY=your_openai_api_key_here` kısmına kendi OpenAI API anahtarınızı (örneğin `sk-...`) yapıştırın.
-   - API anahtarı girmemeniz halinde, uygulama otomatik olarak çok detaylı ve hazır yanıt kütüphanesine sahip yerel Yapay Zeka Simülatör modunda çalışacaktır.
+### 4. Ortam değişkenlerini oluşturun
+Proje klasöründe `.env` adında bir dosya oluşturun.
 
-4. Sunucuyu başlatın:
-   ```bash
-   npm run dev
-   ```
-   veya
-   ```bash
-   npm start
-   ```
+Dosyanın içerisine:
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
+yazın.
+Gerçek API anahtarınızı `.env` dosyasında saklayın.
 
-5. Tarayıcınızda şu adrese gidin:
-   [http://localhost:3000](http://localhost:3000)
+**API anahtarınızı GitHub'a yüklemeyin.**
+`.env` dosyası `.gitignore` içerisinde bulunduğu için Git tarafından takip edilmez.
 
-## Dosya Yapısı
+### 5. Uygulamayı çalıştırın
+```bash
+npm run dev
+```
+Daha sonra tarayıcınızdan uygulamanın çalıştığı yerel adresi açabilirsiniz.
 
-- `server.js` - Express sunucusu, `/api/chat` (OpenAI & Simülasyon) ve `/api/status` endpoint'leri.
-- `public/` - Web arayüzü dosyaları.
-  - `index.html` - Semantik HTML yapısı, İzmir & Bartın bilgi kartları.
-  - `style.css` - Göz alıcı animasyonlar, HSL renk paletleri ve modern cam efekti (glassmorphism) stilleri.
-  - `app.js` - Sekme geçiş mantığı, sohbet işlemleri, yazma (streaming) animasyonu ve durum kontrolü.
-- `.env` - Sunucu portu ve OpenAI API Key tanımları.
-- `package.json` - Proje bağımlılıkları ve komutları.
+## API Yapısı
+
+Uygulamanın backend tarafında yapay zeka istekleri için:
+```text
+POST /api/chat
+```
+endpoint'i kullanılmaktadır.
+
+Frontend tarafından gönderilen kullanıcı mesajı backend tarafından işlenir ve uygun yanıt frontend'e geri gönderilir.
+
+## Güvenlik
+API anahtarının frontend tarafında tutulmaması için OpenAI API iletişimi backend üzerinden gerçekleştirilmektedir.
+Gizli bilgilerin korunması amacıyla `.env` dosyası GitHub repository'sine dahil edilmemiştir.
+`.gitignore` içerisinde:
+```text
+node_modules/
+.env
+.env.local
+npm-debug.log*
+.DS_Store
+```
+
+kuralları bulunmaktadır.
+
+## Geliştirme Alanları
+
+Proje gelecekte aşağıdaki özelliklerle geliştirilebilir:
+
+- Kullanıcı hesap sistemi
+- Favori mekanlar
+- Harita entegrasyonu
+- Konum tabanlı öneriler
+- Otel ve restoran önerileri
+- Etkinlik takvimi
+- Daha gelişmiş yapay zeka önerileri
+- Şehirler için detaylı kategori sistemi
+- Yönetim paneli
+- Veritabanı entegrasyonu
+- Mobil uygulama desteği
+
+## Proje Durumu
+Proje geliştirme aşamasındadır.
+Temel şehir rehberi, frontend arayüzü, Express.js backend yapısı ve yapay zeka sohbet sistemi oluşturulmuştur.
+
+## Geliştirici
+**Melike Sude Tekin**
+Yapay Zeka Operatörlüğü öğrencisi.
+
+GitHub:
+https://github.com/MelikeSudeTekin
+
+## Lisans
+Bu proje eğitim ve portföy amacıyla geliştirilmiştir.
