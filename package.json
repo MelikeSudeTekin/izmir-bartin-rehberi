@@ -1,0 +1,18 @@
+{
+  "name": "izmir-bartin-rehberi",
+  "version": "1.0.0",
+  "description": "İzmir and Bartın City Guide with simulated OpenAI Chatbot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "openai": "^4.51.0"
+  },
+  "author": "Antigravity",
+  "license": "MIT"
+}

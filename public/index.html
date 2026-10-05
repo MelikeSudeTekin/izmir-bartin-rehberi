@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ege'den Karadeniz'e: İzmir & Bartın Şehir Rehberi</title>
+    <meta name="description" content="İzmir'in tarihi, doğal güzellikleri ve kültürü ile Bartın'ın eşsiz zenginliklerini tanıtan interaktif rehber ve yapay zeka asistanı.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-izmir">
+    <!-- Background Gradients -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Header Navigation -->
+    <header class="app-header">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+            <span class="logo-text">Rota<span>Türkiye</span></span>
+        </div>
+        <nav class="city-selector">
+            <button class="city-tab active" id="tab-izmir" onclick="switchCity('izmir')">
+                <i class="fa-solid fa-sun-plant-wilt icon-izmir"></i> İzmir
+            </button>
+            <button class="city-tab" id="tab-bartin" onclick="switchCity('bartin')">
+                <i class="fa-solid fa-tree icon-bartin"></i> Bartın
+            </button>
+        </nav>
+        <div class="header-action">
+            <button class="chat-toggle-btn-header" onclick="toggleChat()">
+                <i class="fa-solid fa-robot"></i> Asistan'a Sor
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        
+        <!-- İzmir Section -->
+        <section id="section-izmir" class="city-section active">
+            <!-- Hero Banner -->
+            <div class="hero-card glass-panel">
+                <div class="hero-content">
+                    <span class="tag">EGE'NİN İNCİSİ</span>
+                    <h1>Tarihin, Denizin ve Özgürlüğün Kenti İzmir</h1>
+                    <p>8500 yıllık görkemli geçmişi, ılık Akdeniz iklimi, leziz mutfağı ve sıcakkanlı insanlarıyla İzmir, keşfedilmeyi bekleyen bir Akdeniz rüyasıdır.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item"><span class="stat-num">8500+</span><span class="stat-lbl">Yıllık Tarih</span></div>
+                        <div class="stat-item"><span class="stat-num">629 km</span><span class="stat-lbl">Kıyı Şeridi</span></div>
+                        <div class="stat-item"><span class="stat-num">30</span><span class="stat-lbl">İlçe</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual izmir-hero-bg">
+                    <div class="overlay-card glass-panel">
+                        <i class="fa-solid fa-clock-three"></i>
+                        <span>İzmir Saat Kulesi, 1901</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Tabs / Grid -->
+            <div class="info-grid">
+                <!-- Tarih -->
+                <div class="info-card glass-panel card-hover" id="izmir-history">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-landmark-dome"></i></div>
+                        <h2>Köklü Tarih</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>İzmir (Smyrna), antik çağın en önemli kültür ve ticaret merkezlerinden biriydi. UNESCO Dünya Mirası Listesi'nde yer alan <strong>Efes Antik Kenti</strong> ve <strong>Bergama (Pergamon)</strong>, bilimin, sanatın ve felsefenin doğduğu topraklardır.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Efes Antik Kenti & Celsus Kütüphanesi</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Tarihi Kemeraltı Çarşısı & Kızlarağası Hanı</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Smyrna Agorası ve Kadifekale Surları</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Doğal Güzellikler -->
+                <div class="info-card glass-panel card-hover" id="izmir-nature">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                        <h2>Doğal Güzellikler</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Turkuaz rengi sularıyla ünlü <strong>Çeşme ve Alaçatı</strong> sahillerinden, mandalina kokulu <strong>Seferihisar</strong> sokaklarına ve şaraplarıyla ünlü yemyeşil dağ köyü <strong>Şirince</strong>'ye kadar İzmir, eşsiz bir doğa mozaiğidir.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Kordon Boyu & Eşsiz Gün Batımları</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Çeşme Altınkum & Ilıca Plajları</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Karagöl Tabiat Parkı & Spil Dağı etekleri</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kültür & Sanat -->
+                <div class="info-card glass-panel card-hover" id="izmir-culture">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-masks-theater"></i></div>
+                        <h2>Kültür & Lezzet</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>İzmir, kendine has mutfağıyla adeta bir gastronomi merkezidir. Sıcak sabahların vazgeçilmezi çıtır çıtır <strong>boyoz ve gevrek</strong>, şifalı Ege otları, zeytinyağlı yemekleri ve sokak lezzetleriyle damaklarda unutulmaz tatlar bırakır.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Boyoz, Gevrek, Kumru ve Bomba Tatlısı</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Tarihi Asansör'de Akşam Sefası</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Uluslararası İzmir Festivali ve Sanat Günleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bartın Section -->
+        <section id="section-bartin" class="city-section">
+            <!-- Hero Banner -->
+            <div class="hero-card glass-panel">
+                <div class="hero-content">
+                    <span class="tag">KARADENİZ'İN ZÜMRÜDÜ</span>
+                    <h1>Doğanın Tarihle Buluştuğu Huzur Kenti Bartın</h1>
+                    <p>Maviyle yeşilin kucaklaştığı Karadeniz kıyısında, 3000 yıllık Ceneviz ve Bizans mirasını taşıyan Amasra'sı ve ahşap konaklarıyla Bartın, sakinliğin adresidir.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item"><span class="stat-num">3000+</span><span class="stat-lbl">Yıllık Geçmiş</span></div>
+                        <div class="stat-item"><span class="stat-num">59 km</span><span class="stat-lbl">Sahil Şeridi</span></div>
+                        <div class="stat-item"><span class="stat-num">%46</span><span class="stat-lbl">Orman Kaplı Alan</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual bartin-hero-bg">
+                    <div class="overlay-card glass-panel">
+                        <i class="fa-solid fa-bridge"></i>
+                        <span>Kemere Köprüsü, Amasra</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Tabs / Grid -->
+            <div class="info-grid">
+                <!-- Tarih -->
+                <div class="info-card glass-panel card-hover" id="bartin-history">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-fort-awesome"></i></div>
+                        <h2>Tarih ve Mimari</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Fatih Sultan Mehmet'in görerek <em>"Çeşm-i Cihan (Dünyanın Gözü) bu mu ola?"</em> dediği Amasra, Roma, Bizans ve Ceneviz dönemlerinden kalan zengin tarihi yapıları barındırır. Tarihi ahşap Bartın Evleri ise Osmanlı mimarisini günümüze taşır.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Amasra Kalesi & Zindan Kapıları</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Kuşkayası Yol Anıtı (Roma Dönemi)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Özgün Mimariye Sahip Tarihi Bartın Evleri</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Doğal Güzellikler -->
+                <div class="info-card glass-panel card-hover" id="bartin-nature">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+                        <h2>Doğal Güzellikler</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Uçsuz bucaksız çam ormanlarıyla kaplı <strong>Küre Dağları Milli Parkı</strong>, 3 kilometrelik altın kumlu <strong>İnkumu Plajı</strong> ve dünyada nadir rastlanan 80 milyon yıllık <strong>Güzelcehisar Bazalt Sütunları</strong> Bartın'ı eşsiz kılar.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Güzelcehisar Lav / Bazalt Sütunları</li>
+                            <li><i class="fa-solid fa-circle-check"></i> İnkumu Plajı & Amasra Koyları</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Ulukaya Kanyonu & Göldere Şelalesi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kültür & Sanat -->
+                <div class="info-card glass-panel card-hover" id="bartin-culture">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                        <h2>Kültür ve Lezzet</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Geleneksel gümüş işleme sanatı olan <strong>Tel Kırma</strong> ve Kurucaşile'nin ahşap yat yapımcılığı Bartın'ın simgeleridir. Gastronomide ise 30'a yakın taze ottan hazırlanan meşhur <strong>Amasra Salatası</strong> ve taze deniz balıkları zirveyi çeker.</p>
+                        <ul class="highlights-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Amasra Salatası & Taze Tava Balığı</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Coğrafi İşaretli Bartın Tel Kırma İşi</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Kurucaşile Geleneksel Ahşap Yat Yapımı</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery / Call to Action section -->
+        <section class="explore-section glass-panel">
+            <div class="explore-info">
+                <h2>Seyahat Asistanı Her An Yanınızda</h2>
+                <p>Bartın'ın saklı kalmış tarihi noktalarını, İnkumu plajının dalga durumunu ya da Amasra salatasının sırrını merak mı ediyorsunuz? Yapay zeka destekli turizm asistanımız sorularınızı gerçek zamanlı yanıtlamak için hazır!</p>
+                <button class="primary-btn" onclick="toggleChat(true)">
+                    <i class="fa-solid fa-comments"></i> Sohbeti Başlat
+                </button>
+            </div>
+            <div class="explore-graphics">
+                <div class="graphic-circle ring-1"></div>
+                <div class="graphic-circle ring-2"></div>
+                <div class="graphic-card glass-panel">
+                    <div class="message-preview">
+                        <span class="user-avatar"><i class="fa-solid fa-user"></i></span>
+                        <div class="text-bubble">Amasra Kalesi tarihi nedir?</div>
+                    </div>
+                    <div class="message-preview response">
+                        <span class="bot-avatar"><i class="fa-solid fa-robot"></i></span>
+                        <div class="text-bubble">Amasra Kalesi, Bizans döneminde inşa edilmiş ve Cenevizliler tarafından genişletilmiştir...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>© 2026 RotaTürkiye. Tüm hakları saklıdır. Bu portal İzmir ve Bartın'ın tanıtımı için tasarlanmıştır.</p>
+        <p class="api-status">
+            <span class="status-indicator" id="status-indicator"></span> 
+            Yapay Zeka Servisi: <span id="api-mode-text">Yükleniyor...</span>
+        </p>
+    </footer>
+
+    <!-- Chatbot Widget Floating Container -->
+    <div class="chat-widget" id="chat-widget">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="bot-info">
+                <div class="bot-icon">
+                    <i class="fa-solid fa-robot"></i>
+                    <span class="online-dot"></span>
+                </div>
+                <div class="bot-details">
+                    <h3>RotaYapayZeka</h3>
+                    <p>Çevrimiçi Seyahat Rehberi</p>
+                </div>
+            </div>
+            <div class="chat-controls">
+                <button class="control-btn" title="Ekranı Temizle" onclick="clearChat()">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+                <button class="control-btn" title="Kapat" onclick="toggleChat(false)">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chat-messages">
+            <!-- Bot Welcome Message -->
+            <div class="message bot-msg animate-msg">
+                <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="msg-content-wrapper">
+                    <div class="msg-content">
+                        Merhaba! Ben RotaTürkiye Yapay Zeka Seyahat Asistanı. 🗺️ 
+                        <br><br>
+                        Özellikle <strong>Bartın ve Amasra</strong>'nın tarihi, doğal güzellikleri (İnkumu, Bazalt Sütunları vb.), yöresel yemekleri ile <strong>İzmir</strong> hakkında merak ettiğiniz her şeyi yanıtlayabilirim.
+                        <br><br>
+                        Nasıl yardımcı olabilirim?
+                    </div>
+                    <span class="msg-time">Şimdi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Questions Suggestions -->
+        <div class="quick-questions-wrapper">
+            <div class="quick-questions-title">Hazır Sorular:</div>
+            <div class="quick-questions" id="quick-questions">
+                <button class="quick-btn" onclick="askQuickQuestion('Bartın\'ın tarihi yerleri nelerdir?')">🏛️ Tarih ve Kaleler</button>
+                <button class="quick-btn" onclick="askQuickQuestion('Güzelcehisar Bazalt Sütunları kaç yıllık?')">🌋 Bazalt Sütunları</button>
+                <button class="quick-btn" onclick="askQuickQuestion('Amasra Salatası nedir?')">🥗 Amasra Salatası</button>
+                <button class="quick-btn" onclick="askQuickQuestion('İzmir boyozu nedir?')">🥮 İzmir Boyozu</button>
+            </div>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form class="chat-input-area" id="chat-form" onsubmit="handleChatSubmit(event)">
+            <input type="text" id="chat-input" placeholder="Bartın veya İzmir hakkında bir soru sorun..." autocomplete="off" required>
+            <button type="submit" class="send-btn" id="send-btn" title="Gönder">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- Floating Chat Trigger Button -->
+    <button class="chat-floating-trigger" id="chat-trigger" onclick="toggleChat(true)" title="Yapay Zeka Asistanı">
+        <i class="fa-solid fa-comments"></i>
+        <span class="badge">1</span>
+    </button>
+
+    <!-- App JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
